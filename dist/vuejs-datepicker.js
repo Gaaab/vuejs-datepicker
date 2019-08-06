@@ -1,6 +1,6 @@
 /*!
  * vuejs-datepicker v1.5.4
- * (c) 2016-2018 Charlie Kassel
+ * (c) 2016-2019 Charlie Kassel
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -1297,6 +1297,7 @@
           return this.close(true)
         }
         this.setInitialView();
+        this.$emit('opened');
       },
       /**
        * Sets the initial picker page view: day, month or year
@@ -1485,6 +1486,7 @@
           }
           document.removeEventListener('click', this.clickOutside, false);
         }
+        this.$emit('blur');
       },
       /**
        * Initiate the component
